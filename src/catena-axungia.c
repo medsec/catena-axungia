@@ -86,7 +86,7 @@ void print_usage(char **argv){
 }
 
 
-int chkparams(){
+int chkparams(void){
     //check for required parameters
 	if(!max_time_set || !max_memory_set){
     	fputs("\nmax_time and max_memory are both required!\n\n", stderr);
