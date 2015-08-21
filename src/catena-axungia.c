@@ -284,11 +284,16 @@ void print_result(int DBG, uint8_t g, uint8_t l, double t){
 	else{
 		printf("No suitable parameters could be found ");
 		if(DBG){
-			printf("for Catena-Butterfly\n");
+			printf("for Catena-Butterfly ");
 		}
 		else{
-			printf("for Catena-Dragonfly\n");
+			printf("for Catena-Dragonfly ");
 		}
+
+		if(full_hash){
+			printf("with the FULLHASH option enabled");
+		}
+		puts("");
 	}
 }
 
@@ -315,7 +320,7 @@ void search(int DBG){
 	}
 
 	//slowdown from garlic++ is actually bigger than 2
-	if(ct > max_time){
+	if(ct > max_time && curgarlic > 1){
 		curgarlic--;
 		ct = measure(DBG, lambda, curgarlic);
 	}
