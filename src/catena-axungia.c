@@ -76,7 +76,7 @@ void print_usage(char **argv){
 	fprintf(stderr,"-i, --iterations ITERATIONS");
 	fprintf(stderr,"\tNumber of iterations used to determine the\n", stderr);
 	fprintf(stderr,"\t\t\t\truntime. Higher values increase stability.\n");
-	fprintf(stderr,"\t\t\t\tDefault: %d, Min: %d, Max%d\n",ITER_DEFAULT, 
+	fprintf(stderr,"\t\t\t\tDefault: %d, Min: %d, Max: %d\n",ITER_DEFAULT, 
 			ITER_LOW, ITER_HIGH);
 	
 	fprintf(stderr,"-f, --full_hash\tUses a full hash function instead of a ");
@@ -299,7 +299,7 @@ void search(int DBG){
 	//BRG requires 2^g memory
 	uint8_t max_garlic = (uint8_t)log2(max_memory * H_PER_KIB);
 	//DBG requires 1.5 x 2^g memory
-	if(DBG && ((1<<max_garlic) * 1.5) > max_memory){
+	if(DBG && ((1<<max_garlic) * 1.5) > (max_memory * H_PER_KIB)){
 		max_garlic--;
 	}
 	
