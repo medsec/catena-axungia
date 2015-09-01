@@ -60,7 +60,7 @@ void print_usage(char **argv){
 	fputs("\n", stderr);
 
 	fprintf(stderr, "-t, --max_time TIME");
-	fprintf(stderr, "\tUpper bound for expected password hashing time in \n");
+	fprintf(stderr, "\tUpper bound for expected password-hashing time in \n");
 	fprintf(stderr, "\t\t\tseconds(floating point). Max: %d\n",TIME_HIGH );
 
 	fprintf(stderr,"-m, --max_memory MEMORY");
@@ -69,7 +69,7 @@ void print_usage(char **argv){
 	fprintf(stderr, "\t\t\tMax: %d\n", MEMORY_HIGH);
 
 	fprintf(stderr,"-h, --min_mhard HARDNESS");
-	fprintf(stderr,"\tLower bound for memory hardness factor.\n");
+	fprintf(stderr,"\tLower bound for memory-hardness factor.\n");
 	fprintf(stderr,"\t\t\t\tDefault: %d, Min: %d, Max: %d\n", HARD_DEFAULT, 
 			HARD_LOW, HARD_HIGH);
 	
